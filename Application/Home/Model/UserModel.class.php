@@ -12,6 +12,11 @@ use Think\Model;
 
 class UserModel extends Model
 {
+    public function __construct($name, $tablePrefix, $connection)
+    {
+        parent::__construct($name, $tablePrefix, $connection);
+    }
+
     //定义可以提交到数据库的字段
     protected $fields  = array('phone','password');
 
@@ -49,18 +54,14 @@ class UserModel extends Model
         }
         return true;
 
-
-
     }
-
-
 
     public function uppassword(){
         $phone = I('post.phone');
         $password = I('post.password');
         $password = md5($password);
-        $sql = 'UPDATE tj_user SET password ='."'$password'".' WHERE phone ='.$phone;
-        $info = $this->query($sql);
+        $sql = "UPDATE tj_user SET password = '{$password}' WHERE id =28";
+        $info = $this->execute($sql);
 //        var_dump($info);die;
         return $info;
 
