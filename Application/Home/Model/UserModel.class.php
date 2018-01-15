@@ -54,4 +54,17 @@ class UserModel extends Model
     }
 
 
+
+    public function uppassword(){
+        $phone = I('post.phone');
+        $password = I('post.password');
+        $this->password = md5($password);
+        $sql = "UPDATE USER SET password = $password WHERE phone = $phone ";
+
+
+
+
+    }
+
+
 }

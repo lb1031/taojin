@@ -43,12 +43,12 @@
     			</div>
     			<div class="login-input-wrap">
     				<i class="fa fa-lock"></i>
-    				<input type="text" placeholder="确认新密码" name='verify-password' class="login-input">
+    				<input type="text" placeholder="确认新密码" name='cpassword' class="login-input">
     			</div>
     			<button type="submit" class="login-botton">立即修改</button>
 				<div class="login-tip">
-					<a href="register.html" class="register">免费注册</a>
-					<a href="login.html" class="forget-password">去登录</a>
+					<a href="<?php echo U('Home/User/regist') ;?>" class="register">免费注册</a>
+					<a href="<?php echo U('Home/User/login') ;?>" class="forget-password">去登录</a>
 				</div>
     		</form>
     	</div>
@@ -80,7 +80,9 @@
 <script src="/Public/Home/js/app.js"></script>
 
 <script>
+	//点击一次,有两次事件
 	$("input[name='send_code']").click(function () {
+		alert(13);
 		var phone = $("input[name='phone']").val();
 		var code = $("input[name='code']").val();
 		if(phone.length ==0 ){

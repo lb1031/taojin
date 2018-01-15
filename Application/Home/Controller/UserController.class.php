@@ -62,16 +62,19 @@ class UserController extends Controller
                 'phone' => $phone,
                 'content' => $code
             ]);
-            var_dump($code);
+            var_dump($info);
 
         }
 
         public function forget(){
             if(IS_POST){
                 $model = D('User');
+
                 if($model->create(I('post.'),2)){
-                    if($model->add()){
-                        $this->success('注册成功!',U('Home/User/login'));
+//                    var_dump($model->uppassword());die;
+                    if(FALSE !== $model->uppassword()){
+                        //提示成功，并跳转到list方法中
+                        $this->success('修改成功',U('login'));
                         exit;
                     }
                 }
