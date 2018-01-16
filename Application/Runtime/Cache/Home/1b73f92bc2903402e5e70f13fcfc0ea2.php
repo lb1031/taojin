@@ -26,7 +26,7 @@
 <div class="body-content">
     <div class="login-content-wrap container ">
         <div class="login-content-banner"></div>
-        <form action="/index.php/Home/User/regist.html" METHOD="post" class="login-form-content register-content-wrap">
+        <form action="/index.php/Home/User/regist" METHOD="post" class="login-form-content register-content-wrap">
             <p class="login-title">账号注册</p>
             <div class="login-input-wrap">
                 <i class="fa fa-mobile"></i>

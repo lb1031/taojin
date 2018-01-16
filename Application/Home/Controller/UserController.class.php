@@ -81,8 +81,6 @@ class UserController extends Controller
                 $msg = $model->getError();
                 $this->error($msg);
             }
-            $this->display();
-
 
             $this->display();
         }
