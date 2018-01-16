@@ -72,7 +72,8 @@ class UserController extends Controller
 
                 if($model->create(I('post.'),2)){
 //                    var_dump($model->uppassword());die;
-                    if(FALSE !== $model->uppassword()){
+//                    dump($model->uppassword());exit;
+                    if($model->uppassword() !== false){
                         //提示成功，并跳转到list方法中
                         $this->success('修改成功',U('login'));
                         exit;
